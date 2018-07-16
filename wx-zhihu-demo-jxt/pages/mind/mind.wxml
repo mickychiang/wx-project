@@ -1,0 +1,73 @@
+<!--pages/mind/mind.wxml-->
+<view class='mind'>
+  <scroll-view class='mind-container' scroll-y bindscroll='onScroll'>
+    <swiper class='mind-container-circle-swiper' indicator-dots='{{indicatorDots}}' circular='{{circular}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
+      <block wx:for='{{discussList}}' wx:key="id">
+        <swiper-item vertical='{{vertical}}'>
+          <view class='mind-circle-item' data-index='{{index}}' data-item='{{item}}' bindtap='onSelectedRecBanner'>
+            <image class='circle-item-image' src='{{item.image}}'/>
+            <view class='circle-item-category'>{{item.category}}</view>
+            <view class='circle-item-title'>{{item.title}}</view>
+            <view class='circle-item-description'>{{item.description}}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='mind-container-focus-view'>
+      <view class='mind-focus-header'>关注有趣的人，收获更多好想法</view>
+      <block wx:for='{{recFocusList}}' wx:key='userId'>
+        <view class='mind-focus-item' data-index='{{index}}' data-item='{{item}}' bindtap='onSelectedRecFocus'>
+          <image class="focus-item-avatar" src="{{item.avatar}}"/>
+          <view class="focus-item-info {{index === 3 ? 'last' : ''}}"> 
+            <text class="focus-item-nickname">{{item.nickName}}</text> 
+            <!-- <view class="find-icon-wrapper">
+              <image class="find-focus-icon find-icon-best" wx:if="{{item.bestAnswer}}" src="../../assets/best-icon.png" />
+              <image class="find-focus-icon find-icon-auth" wx:if="{{item.auth}}" src="../../assets/auth-icon.png" />
+            </view> -->
+            <view class="focus-item-introduce">{{item.intro}}</view>  
+            <view class="focus-item-btn" wx:if="{{!focusList[index]}}" data-index="{{index}}" bindtap="onFocusTap">关注</view>
+            <view class="focus-item-btn has-focus" wx:if="{{focusList[index]}}" data-index="{{index}}">已关注</view>
+          </view>
+        </view>
+      </block>
+      <view class='mind-focus-footer'>
+        <view class="mind-focus-button mind-focus-refresh" bindtap="getRecFocusList">换一批</view>
+        <view class="mind-focus-button mind-focus-all" bindtap="onFocusAllTap">全部关注</view>
+      </view>
+    </view>
+    <view class='mind-container-hot-view'>
+      <!-- <view class="find-hot-header fixed" wx:if="{{scrollTop >= 430}}">
+        <view class="find-hot-title">最近热门</view>
+      </view> -->
+      <view class="find-hot-header">
+        <view class="find-hot-title">最近热门</view>
+      </view>
+      <view class="find-hot-item" wx:for="{{recHotList}}" wx:key="{{index}}" wx:item="item">
+        <image class="find-hot-avatar" src="{{item.avatar}}" />
+        <view class="find-hot-info">
+          <text class="find-focus-nickname find-hot-nickname">{{item.nickname}}</text>
+          <view class="find-icon-wrapper">
+          <image class="find-focus-icon find-icon-best" wx:if="{{item.bestAnswer}}" src="../../assets/best-icon.png" />
+          <image class="find-focus-icon find-icon-auth" wx:if="{{item.auth}}" src="../../assets/auth-icon.png" />
+        </view>
+        <view class="find-focus-introduce">{{item.time}}小时前</view>
+          <view class="find-hot-btn" wx:if="{{!hotFocusList[index]}}" data-index="{{index}}" bindtap="hotFocus">关注</view>
+          <view class="find-hot-btn has-focus" wx:if="{{hotFocusList[index]}}" data-index="{{index}}">已关注</view>
+          <view class="find-control-more">
+             <image class="find-control-image" src="../../assets/more-control.png" bindtap="toggleDrawer" />
+          </view>
+          </view>
+          <view class="find-hot-content {{!showIndex[index] ? 'text-overflow' : ''}}">
+                    {{item.content}}
+          </view>
+          <view wx:if="{{!showIndex[index]}}" class="find-show-all" data-index="{{index}}" bindtap="toggleShow">展开全文</view>
+          <view wx:if="{{showIndex[index]}}" class="find-show-all" data-index="{{index}}" bindtap="toggleShow">收起全文</view>
+          <view class="find-hot-footer">
+            <image class="find-hot-img" src="../../assets/forward.png" /><text class="find-hot-text">{{item.forward}}</text>
+            <image class="find-hot-img" src="../../assets/comment.png" /><text class="find-hot-text">{{item.comment}}</text>
+            <image class="find-hot-img" src="../../assets/praise.png" /><text class="find-hot-text">{{item.praise}}</text>
+          </view>
+        </view>
+    </view>
+  </scroll-view>
+</view>

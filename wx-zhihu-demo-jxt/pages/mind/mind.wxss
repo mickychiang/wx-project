@@ -1,0 +1,164 @@
+/* pages/mind/mind.wxss */
+.mind-container {
+  height: 100%;
+  background-color: papayawhip;
+}
+
+.mind-container-circle-swiper {
+  height: 150rpx;
+  background-color: #ffffff;  
+}
+
+.mind-container-circle-swiper {
+  position: relative;
+}
+
+.mind-circle-item {
+  position: absolute;
+  /* width: 90%;   */
+  height: 80%; 
+  margin: auto;  
+  top: 0; left: 15rpx; bottom: 0; right: 15rpx;
+  overflow: hidden; 
+  border: 1px solid rgba(0, 0, 0, 0.1); 
+  border-radius: 10rpx; 
+  box-shadow: -2rpx 2rpx 10rpx rgba(0, 0, 0, 0.1);  
+}
+
+.circle-item-image {
+  position: absolute;
+  /* 图片尺寸3:2 */
+  width: 135rpx;
+  height: 90rpx; 
+  margin: auto;
+  top: 0; bottom: 0;
+  left: 20rpx;
+  background-color: pink;
+}
+
+.circle-item-category,
+.circle-item-title,
+.circle-item-description {
+  position: absolute;
+  left: 175rpx; right: 20rpx;
+  height: 33.3%;
+}
+
+.circle-item-category {
+  top: 0;
+  background-color: white;
+  font-size: 28rpx;
+  color: #1E8AE8;
+  font-style: italic;
+}
+
+.circle-item-title {
+  top: 33.3%;
+  font-size: 26rpx;
+  color: #323233;
+  background-color: gainsboro; 
+}
+
+.circle-item-description {
+  top: 66.6%;
+  font-size: 24rpx;
+  color: #999;
+  padding-right: 20rpx;
+  overflow: hidden;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  background-color: whitesmoke;  
+}
+
+/* 2. */
+.mind-focus-header {
+  color: #323233;
+  font-size: 28rpx;
+  /* 设置段落的字体的粗细 */
+  font-weight: 500;
+  margin: 15rpx;
+}
+
+.mind-focus-item {
+  position: relative; 
+  height: 100rpx; 
+  width: 100%;
+  /* background-color: yellowgreen; */
+}
+
+.focus-item-avatar {
+  display: inline-block;
+  position: absolute;
+  width: 70rpx; height: 70rpx;
+  margin: 15rpx; 
+  /* 设置元素的垂直对齐方式 */
+  vertical-align: middle; 
+  border-radius: 50%;
+  background-color: peru;
+}
+
+.focus-item-info {
+  display: inline-block;
+  position: absolute; 
+  left: 100rpx;
+  right: 20rpx;
+  height: 98rpx;  
+  background-color: white; 
+  font-size: 28rpx;
+  vertical-align: middle;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.2);
+}
+
+.last {
+  border: none;
+}
+
+.focus-item-nickname {
+  position: absolute;
+  padding-top: 10rpx; 
+}
+
+.focus-item-introduce {
+  position: absolute;
+  padding-top: 55rpx;   
+  color: #999;
+  font-size: 26rpx; 
+}
+
+.focus-item-btn {
+  position: absolute;
+  right: 20rpx;
+  vertical-align: middle;
+  line-height: 98rpx;
+  color: #1E8AE8;
+}
+
+.has-focus {
+  color: #999;
+}
+
+.mind-focus-footer {
+  text-align: center;
+}
+
+.mind-focus-button {
+  display: inline-block;
+  width: 270rpx;
+  font-size: 24rpx;
+  padding: 10rpx;
+  text-align: center;
+  margin: 10rpx;
+}
+
+.mind-focus-refresh {
+  color: #1E8AE8;
+  border: 1rpx solid #1E8AE8;
+  border-radius: 5rpx;
+}
+
+.mind-focus-all {
+  color: #fff;
+  background: #1E8AE8;
+  border: 1rpx solid #1E8AE8;
+  border-radius: 5rpx;
+}

@@ -1,0 +1,205 @@
+/* pages/home/home.wxss */
+page {
+  background: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  height: 100%; 
+} 
+
+/* 1 */
+.home-nav {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88rpx;    
+  background-color: #ffffff;
+  /* 当你定义的CSS中有position属性值为absolute、relative或fixed */
+  /* 用z-index此取值方可生效 */
+  /* 此属性参数值越大，则被层叠在最上面 */
+  z-index: 1000;
+  border-bottom: 1rpx solid #f2f2f2; 
+  box-sizing: border-box;   
+}
+
+/* 1.1 */
+.home-nav-search {
+  width: 76%;
+  height: 60rpx;
+  /* 上 右 下 左  */
+  /* margin: 14rpx 30rpx;  */
+  margin-top: 14rpx; 
+  margin-bottom: 14rpx;
+  margin-left: 30rpx; 
+  display: inline-block;
+  vertical-align: middle;
+  background: #f6f6f6; 
+  border-radius: 10rpx;
+  text-align: left;
+  font-size: 28rpx;
+  line-height: 60rpx;  
+  color: #cdcdcd;
+}
+
+/* 1.2 */
+ .home-nav-question {
+  height: 60rpx;
+  margin-right: 30rpx;
+  font-size: 28rpx;
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 60rpx;
+} 
+
+.icon-search, .icon-edit {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 18rpx; 
+  margin-left: 18rpx;
+}
+
+/* 2 */
+.home-menu {
+  position: fixed;
+  top: 88rpx;
+  left: 0;
+  width: 100%;
+  background: #f6f6f6;
+  border-top: 1rpx solid #f6f6f6;
+  border-bottom: 1rpx solid #f6f6f6;
+  box-sizing: border-box; 
+}
+
+.home-menu-item {
+  display: inline-block;
+  width: 33.3%;
+  font-size: 28rpx;
+  text-align: center;
+  background: #fff;
+  color: #999;
+  padding: 14rpx 0;
+}
+
+.home-menu-line {
+  width: 33.3%;
+  height: 4rpx;
+  bottom: 0;
+  background-color: #333;
+  position: absolute;
+  border-radius: 5px;
+  /* 动画效果 */
+  transition: left .5s;
+}
+
+/* 3 */
+.home-container-swiper {
+  position: absolute;  
+  top: 150rpx;
+  left: 0;
+  width: 100%;    
+  padding-top: 20rpx; 
+  height: auto;  
+  bottom: 0rpx; 
+  background-color: #ebebeb;
+}
+
+.load-more {
+  color: #cdcdcd;
+  text-align: center;
+  margin: 15rpx 0;
+  height: 50rpx;
+}
+
+.is-loading{
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
+}
+
+scroll-view {
+  display: inline;  
+}
+
+.home-container-list {
+  /* height: 1000rpx; */
+  height: 100%;
+}
+
+.container-item {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.container-status-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.status {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.title {
+  font-weight: bold;
+  color: #1a1a1a;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.content { 
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.content .desc {
+  font-size: 14px;
+  color: #444;
+}
+
+.content .desc-image, .title-image{
+  width: 240rpx;
+  height: 160rpx;
+  flex-shrink: 0;
+  border-radius: 10rpx;
+}
+
+.top-image{
+  width: 100%;
+  height: 200rpx;
+}
+
+.col{
+  display: flex;
+  font-family: -apple-system,'Helvetica Neue', sans-serif;
+}
+
+.col-1{
+  color: red;
+  font-weight: bold;
+}
+
+.col-7 .status{
+  position: relative;
+  top: 10rpx;
+}
+
+.row{
+  display: block;
+  margin: 0;
+}
+
+
+
